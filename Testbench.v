@@ -11,7 +11,7 @@ wire cs;
 
 // Инициализируем переменные
 initial begin
-  $dumpfile("signals.vcd");
+  $dumpfile("out.vcd");
   $dumpvars(0, spi_testbench);
   clock = 0;       // Начальное значнеие для clock
   reset = 0;       // Начальное значнеие для reset
