@@ -1,10 +1,10 @@
 `timescale 1ns/1ps
 
 module spi_testbench();
-// Входы делаем регистрами, а выходы - проводами
+
 reg clock;
 reg reset;
-reg shutdown;
+
 wire miso;
 wire mosi;
 wire cs;
@@ -17,20 +17,14 @@ initial begin
   reset = 0;       // Начальное значнеие для reset
   // Тактирование
   #2 reset = 0;    // Установка сброса
-  #3 reset = 1;   // Снятие сброса
-  #496 reset = 0;    // Установка сброса
-  #500 shutdown = 1;    // Завершение
-
+  #3 reset = 1;    // Снятие сброса
+  #496 reset = 0;  // Установка сброса
+  #500 $finish;    // Конец симуляции
 end
 
 // Тактовый генератор
 always begin
   #2 clock = ~clock;
-end
-
-// Конец симуляции
-always @(posedge shutdown) begin
-  $finish;
 end
 
 // Присоединяем модули
