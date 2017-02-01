@@ -1,8 +1,8 @@
 # verilog_spi
 
-A simple demo of SPI module implemented in verilog.
+Учебная модель SPI модуля, созданная с помощью Verilog.
 
-To get waveforms use this console command sequence:
+Для получения осциллограммы используйте следующую последовательность команд:
 
 ```cmd
 iverilog -f files.txt
